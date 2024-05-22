@@ -1,0 +1,18 @@
+FROM debian:12
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y build-essential && \
+    apt-get clean && \
+    rm -rf var/lib/apt/lists/*
+
+COPY . /home/beetheleaf123/helloworld
+WORKDIR /home/beetheleaf123/helloworld
+
+RUN g++ -o hello hello.cpp
+
+CMD ["./hello"]
+
+
+

@@ -1,0 +1,36 @@
+podman run -dit -p 2222:22 --name ssh_debian12 ssh 
+podman ps -all 
+hostname -I 
+ssh -l root -p 2222 172.31.36.112
+
+The authenticity of host '[172.31.36.112]:2222 ([172.31.36.112]:2222)' can't be established.
+ED25519 key fingerprint is SHA256:p1YaMjTGMN5fHSBOU15VkpUSPpdbUdA7/F/HbOTPNuM.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added '[172.31.36.112]:2222' (ED25519) to the list of known hosts.
+root@172.31.36.112's password:
+Linux 52cfb711be23 5.15.146.1-microsoft-standard-WSL2 #1 SMP Thu Jan 11 04:09:03 UTC 2024 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+debug1: PAM: reinitializing credentials
+debug1: permanently_set_uid: 0/0
+Environment:
+  LANG=C.UTF-8
+  USER=root
+  LOGNAME=root
+  HOME=/root
+  PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+  SHELL=/bin/bash
+  TERM=xterm-256color
+  MOTD_SHOWN=pam
+  SSH_CLIENT=10.0.2.100 49270 22
+  SSH_CONNECTION=10.0.2.100 49270 10.0.2.100 22
+  SSH_TTY=/dev/pts/1
+root@52cfb711be23:~#
+

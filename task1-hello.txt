@@ -1,0 +1,10 @@
+ sudo apt-get update
+ sudo apt-get -y install podman
+
+cd helloworld
+nano Dockerfile22
+nano hello.cpp
+
+podman build -t hello-world-cpp -f Dockerfile
+
+podman run hello-world-cpp
